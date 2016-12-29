@@ -23,9 +23,46 @@ $app = new Laravel\Lumen\Application(
     realpath(__DIR__.'/../')
 );
 
-// $app->withFacades();
+/*
+|--------------------------------------------------------------------------
+| Load configure
+|--------------------------------------------------------------------------
+|
+| 加载项目的配置文件
+|
+*/
+$configs = [
+    'repository',
+];
+array_walk($configs, function ($config) use ($app) {
+    $app->configure($config);
+});
 
-// $app->withEloquent();
+/*
+|--------------------------------------------------------------------------
+| Class Aliases
+|--------------------------------------------------------------------------
+|
+| This array of class aliases will be registered when this application
+| is started. However, feel free to register as many as you wish
+|
+*/
+$aliases = [
+    // Illuminate\Support\Facades\File::class => 'File',
+];
+
+$app->withFacades(true, $aliases);
+
+/*
+|--------------------------------------------------------------------------
+| Load the Eloquent library for the application.
+|--------------------------------------------------------------------------
+|
+| 使用 Eloquent ORM Model
+|
+*/
+
+$app->withEloquent();
 
 /*
 |--------------------------------------------------------------------------
@@ -78,9 +115,16 @@ $app->singleton(
 |
 */
 
-// $app->register(App\Providers\AppServiceProvider::class);
-// $app->register(App\Providers\AuthServiceProvider::class);
-// $app->register(App\Providers\EventServiceProvider::class);
+$providers = [
+    //App\Providers\AppServiceProvider::class,
+    //App\Providers\AuthServiceProvider::class,
+    //App\Providers\EventServiceProvider::class,
+    App\Providers\RepositoryServiceProvider::class,
+];
+
+array_walk($providers, function ($provider) use ($app) {
+    $app->register($provider);
+});
 
 /*
 |--------------------------------------------------------------------------
