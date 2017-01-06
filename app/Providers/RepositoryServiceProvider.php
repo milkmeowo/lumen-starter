@@ -23,8 +23,6 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->register('Milkmeowo\Framework\Repository\Providers\RepositoryServiceProvider');
-
         // 绑定Eloquent和Interface
         //:end-bindings:
     }
