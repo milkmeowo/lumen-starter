@@ -2,7 +2,7 @@
 
 namespace App\Transformers;
 
-use Milkmeowo\Framework\Repository\Foundations\Transformers\Transformer;
+use Milkmeowo\Framework\Base\Transformers\Transformer;
 
 class BaseTransformer extends Transformer
 {

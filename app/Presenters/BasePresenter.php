@@ -2,7 +2,7 @@
 
 namespace App\Presenters;
 
-use Milkmeowo\Framework\Repository\Foundations\Presenters\Presenter;
+use Milkmeowo\Framework\Base\Presenters\Presenter;
 
 abstract class BasePresenter extends Presenter
 {

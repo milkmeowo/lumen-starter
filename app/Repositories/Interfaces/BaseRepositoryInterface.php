@@ -2,7 +2,7 @@
 
 namespace App\Repositories\Interfaces;
 
-use Milkmeowo\Framework\Repository\Foundations\Repositories\Interfaces\RepositoryInterface;
+use Milkmeowo\Framework\Base\Repositories\Interfaces\RepositoryInterface;
 
 interface BaseRepositoryInterface extends RepositoryInterface
 {
