@@ -120,6 +120,8 @@ $providers = [
     //App\Providers\AuthServiceProvider::class,
     //App\Providers\EventServiceProvider::class,
     App\Providers\RepositoryServiceProvider::class,
+
+    Milkmeowo\Framework\Base\Providers\LumenServiceProvider::class,
 ];
 
 array_walk($providers, function ($provider) use ($app) {
