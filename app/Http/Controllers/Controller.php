@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Laravel\Lumen\Routing\Controller as BaseController;
+use Milkmeowo\Framework\Base\Api\Controllers\LumenController as BaseController;
 
 class Controller extends BaseController
 {
