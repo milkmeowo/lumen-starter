@@ -228,7 +228,7 @@ return [
             'transformers' => 'Transformers',
             'presenters'   => 'Presenters',
             'validators'   => 'Validators',
-            'controllers'  => 'Http/Controllers',
+            'controllers'  => 'Api\Controllers\V1',
             'provider'     => 'RepositoryServiceProvider',
             'criteria'     => 'Repositories\Criteria',
             'stubsOverridePath' => app()->path(),
