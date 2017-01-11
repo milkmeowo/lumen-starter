@@ -2,9 +2,8 @@
 
 namespace App\Providers;
 
-use App\User;
-use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
+use Laravel\Passport\Passport;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -25,15 +24,19 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // Here you may define how you wish users to be authenticated for your Lumen
-        // application. The callback which receives the incoming request instance
-        // should return either a User instance or null. You're free to obtain
-        // the User instance via an API token or any other method necessary.
+        // Token Lifetimes
+        Passport::tokensExpireIn(Carbon::now()->addDays(15));
 
-        $this->app['auth']->viaRequest('api', function ($request) {
-            if ($request->input('api_token')) {
-                return User::where('api_token', $request->input('api_token'))->first();
-            }
-        });
+        // Refresh Token Lifetimes
+        Passport::refreshTokensExpireIn(Carbon::now()->addDays(30));
+
+        // Pruning Revoked Tokens
+        //Passport::pruneRevokedTokens();
+
+        // Token Scopes
+        //Passport::tokensCan([
+        //    'place-orders' => 'Place orders',
+        //    'check-status' => 'Check order status',
+        //]);
     }
 }
