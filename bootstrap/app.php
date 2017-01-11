@@ -117,8 +117,8 @@ $app->singleton(
 
 $providers = [
     //App\Providers\AppServiceProvider::class,
-    //App\Providers\AuthServiceProvider::class,
     //App\Providers\EventServiceProvider::class,
+    App\Providers\AuthServiceProvider::class,
     App\Providers\RepositoryServiceProvider::class,
 
     Milkmeowo\Framework\Base\Providers\LumenServiceProvider::class,
