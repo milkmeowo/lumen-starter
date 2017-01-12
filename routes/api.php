@@ -36,7 +36,7 @@ $api->version('v1', [
     $api->put('/users/{id}', ['as' => 'users.update', 'uses' => 'UsersController@update']);
 
     // 删除 User
-    $api->delete('/users/{id}', ['as' => 'users.update', 'uses' => 'UsersController@destroy']);
+    $api->delete('/users/{id}', ['as' => 'users.destroy', 'uses' => 'UsersController@destroy']);
 
     //:end-routes:
 });
