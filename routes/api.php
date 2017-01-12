@@ -21,7 +21,7 @@ $api->version('v1', [
     $api->get('/users/trashed/{id}', ['as' => 'users.trashed.show', 'uses' => 'UsersController@trashedShow']);
 
     // 恢复
-    $api->put('/users/{id}/restore', ['as' => 'users.update', 'uses' => 'UsersController@restore']);
+    $api->put('/users/{id}/restore', ['as' => 'users.restore', 'uses' => 'UsersController@restore']);
 
     // 列表 User
     $api->get('/users', ['as' => 'users.index', 'uses' => 'UsersController@index']);
