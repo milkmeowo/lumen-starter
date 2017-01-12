@@ -18,7 +18,7 @@ $api->version('v1', [
     $api->get('/users/trashed', ['as' => 'users.trashed', 'uses' => 'UsersController@trashedIndex']);
 
     // 显示已删除 User
-    $api->get('/users/trashed/{id}', ['as' => 'users.show', 'uses' => 'UsersController@trashedShow']);
+    $api->get('/users/trashed/{id}', ['as' => 'users.trashed.show', 'uses' => 'UsersController@trashedShow']);
 
     // 恢复
     $api->put('/users/{id}/restore', ['as' => 'users.update', 'uses' => 'UsersController@restore']);
