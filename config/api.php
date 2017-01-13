@@ -155,8 +155,7 @@ return [
     */
 
     'middleware' => [
-        Milkmeowo\Framework\Dingo\Auth\Providers\OAuth2::class,
-        Milkmeowo\Framework\Dingo\Auth\Providers\Passport::class,
+
     ],
 
     /*
@@ -170,7 +169,8 @@ return [
     */
 
     'auth' => [
-
+        Milkmeowo\Framework\Dingo\Auth\Providers\OAuth2::class,
+        Milkmeowo\Framework\Dingo\Auth\Providers\Passport::class,
     ],
 
     /*
