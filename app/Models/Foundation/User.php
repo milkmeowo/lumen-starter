@@ -15,15 +15,25 @@ class User extends BaseUser
      * @var array
      */
     protected $fillable = [
-        'name', 'email',
+        'name', 'email', 'password',
     ];
 
     /**
-     * The attributes excluded from the model's JSON form.
+     * The attributes that should be hidden for arrays.
      *
      * @var array
      */
     protected $hidden = [
-        'password',
+        'remember_token',
     ];
+
+    /**
+     * Called when model is created
+     * Other events available are in BaseModelEvents
+     */
+    public function onCreated()
+    {
+        parent::onCreated();
+
+    }
 }

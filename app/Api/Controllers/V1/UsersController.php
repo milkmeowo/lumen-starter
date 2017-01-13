@@ -50,6 +50,9 @@ class UsersController extends BaseController
 
         $this->validator->with($data)->passesOrFail(ValidatorInterface::RULE_CREATE);
 
+        // encrypt password
+        $data['password'] = bcrypt($data['password']);
+
         $user = $this->repository->create($data);
 
         // Created, return 201 data
@@ -141,7 +144,7 @@ class UsersController extends BaseController
      */
     public function restore($id)
     {
-        $restored =  $this->repository->restore($id);
+        $restored =  $this->repository->restore((int) $id);
 
         if ($restored) {
             // Restored, return 204 No Content
