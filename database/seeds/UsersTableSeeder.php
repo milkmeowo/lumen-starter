@@ -12,8 +12,7 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
-            //            'slid' => '1',
+        User::firstOrCreate([
             'name' => "Milkmeowo",
             'email' => 'Milkmeowo@gmail.com',
             'password' => app('hash')->make('1234567890'),
