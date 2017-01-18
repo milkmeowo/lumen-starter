@@ -169,9 +169,15 @@ return [
     */
 
     'auth' => [
-        'passport' => \Milkmeowo\Framework\Dingo\Auth\Providers\Passport::class,
-        'oauth' => \Milkmeowo\Framework\Dingo\Auth\Providers\OAuth2::class,
-        'jwt' => Dingo\Api\Auth\Provider\JWT::class,
+        'passport' => function ($app) {
+            return new \Milkmeowo\Framework\Dingo\Auth\Providers\Passport($app['auth']);
+        },
+        //'oauth' => function ($app) {
+        //    return new \Milkmeowo\Framework\Dingo\Auth\Providers\OAuth2($app['auth']);
+        //},
+        //'jwt' => function ($app) {
+        //    return new Dingo\Api\Auth\Provider\JWT($app['auth']);
+        //},
     ],
 
     /*
